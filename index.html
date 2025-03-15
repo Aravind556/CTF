@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Hidden Flag</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #aa7878;
+            margin: 0;
+            padding: 0;
+            color: #875454;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        .challenge-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .clue {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .red-herring {
+            color: #e74c3c;
+            font-weight: bold;
+            cursor: pointer;
+            /* This is a distraction, not the real flag */
+        }
+        
+        .seemingly-normal-text {
+            margin: 20px 0;
+        }
+        
+        /* Hidden flag in an unused CSS class */
+        .secret-flag {
+            /* CTF{CSS_1nsp3ct0r_Pro} */
+            display: none;
+        }
+        
+        button {
+            background-color: #0a98f7;
+            color: rgb(144, 43, 43);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CTF Challenge: Find The Hidden Flag</h1>
+    </header>
+    
+    <div class="container">
+        <div class="challenge-box">
+            <h2>Welcome, hacker!</h2>
+            <p>Your mission is to find the hidden flag on this page. The flag follows the format <code>CTF{something_here}</code>.</p>
+            <p class="clue">Hint: Sometimes what you're looking for isn't visible to the naked eye.</p>
+            
+            <div class="seemingly-normal-tex">
+                <p>This page looks pretty simple, doesn't it? But appearances can be deceiving. Look deeper and you might find what you're searching for.</p>
+                <p>Remember, in web challenges, there are many places to hide information:</p>
+                <ul>
+                    <li>HTML comments</li>
+                    <li>JavaScript variables</li>
+                    <li>HTTP headers</li>
+                    <li>And many more...</li>
+                </ul>
+            </div>
+            
+            <p class="red-herring" title="Almost there...but not quite!">Hover over me for a clue!</p>
+            
+            <button id="hint-btn">Get Another Hint</button>
+        </div>
+        
+        <footer>
+            &copy; 2025 CTF Challenge Creator | Good luck!
+        </footer>
+    </div>
+    
+    <script>
+        document.getElementById('hint-btn').addEventListener('click', function() {
+            alert("Look at the styles... what's hiding there?");
+        });
+    </script>
+</body>
+</html>
